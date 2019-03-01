@@ -1,0 +1,26 @@
+﻿@model List<Company>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        @foreach (var item in Model)
+        {
+            <button id="company" class="btn btn-outline-success">@item.Name</button>
+        }
+        <div id="ticketno"></div>
+        <div id="tableno"></div>
+        <div id="waiting"></div>
+
+
+
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/Scripts/jquery.signalR-2.4.0.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="~/Scripts/queue.js"></script>
+}
